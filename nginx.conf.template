@@ -35,4 +35,8 @@ stream {
         proxy_pass ${DOLLAR}upstream:${BACKEND_PORT};
     }
 
+	server {
+		listen 80;
+		return 301 https://${DOLLAR}host${DOLLAR}request_uri;
+	}
 }
